@@ -105,6 +105,9 @@ h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;margi
 @keyframes dot{50%{opacity:.25}}
 .pj:not(.vis) .fd,.pj:not(.vis) .sv-bar,.pj:not(.vis) .draw,.pj:not(.vis) .grow-x,.pj:not(.vis) .dash,.pj:not(.vis) .dot{animation-play-state:paused}
 .pj{cursor:pointer}
+.pj img,dialog img{display:block;width:100%;height:auto;background:var(--bg2)}
+.pj.feat{grid-column:1/-1}
+.pj.feat .bd{max-width:760px}
 .pj:focus-visible{outline:2px solid var(--accent2);outline-offset:3px}
 .pj .more{display:inline-block;margin-top:12px;font-size:.85rem;font-weight:600;color:var(--accent)}
 dialog{border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--text);width:min(780px,92vw);max-height:90vh;padding:0;overflow:auto;margin:auto}
@@ -347,8 +350,8 @@ const proyectos=[
   ["Diseño y despliegue de asistentes basados en LLMs en entornos de producción","Consulta de pagos automatizada para usuarios de 13 países"],"13 países atendidos"],
  [pipe,"Planilla de pagos automatizada","Pipelines que leen y validan facturas para generar la planilla de pagos de Argentina.",["Python","ETL","Calidad de datos"],
   ["Pipelines en Python que leen y validan facturas","Garantizan información confiable y precisa para el proceso de pagos"],"87% de mejora en el tiempo de respuesta organizacional con automatización en Python"],
- [trace,"Trazabilidad de comisiones","Aplicación de control documental con visibilidad total del proceso de pago al cliente final.",["Full Stack","Trazabilidad"],
-  ["Control y trazabilidad documental del proceso de comisiones en Colombia","Visibilidad absoluta y transparencia para el cliente final en cada etapa del pago"],"Transparencia en cada etapa del pago"],
+ [`<img src="portal_de_comisiones_para_emprendedores.svg" alt="Portal de documentación y consultas: ingreso, documentos validados y asistente de IA" loading="lazy">`,"Portal de comisiones para emprendedores","Portal con ingreso seguro, validación automática de documentos y un asistente de IA para consultar pagos.",["Full Stack","Trazabilidad","Asistente IA"],
+  ["Control y trazabilidad documental del proceso de comisiones en Colombia","Validación automática de documentos (ficha bancaria, documento de identidad y RUT)","Asistente de IA para consultar el estado de pagos y documentos","Visibilidad absoluta y transparencia para el cliente final en cada etapa del pago"],"Transparencia en cada etapa del pago"],
  [bi,"Tableros de KPIs","Dashboards dinámicos para monitorear los indicadores clave de desempeño de la compañía.",["Power BI","KPIs","Visualización"],
   ["Tableros dinámicos en Power BI","Monitoreo de indicadores clave de desempeño (KPIs)","Información accesible para toda la organización"],"KPIs de la compañía en un solo lugar"],
  [n8n,"Validación masiva con n8n","Flujos de automatización que validan documentos masivos sin intervención manual.",["n8n","Automatización"],
@@ -358,8 +361,9 @@ const proyectos=[
  [cloud,"Despliegues en la nube","Arquitectura serverless y despliegues automatizados para aplicaciones y agentes de IA.",["AWS","Lambda","Vercel"],
   ["Arquitectura serverless con AWS Lambda, S3 y DynamoDB","Despliegues automatizados en Vercel","AWS Academy Graduate – Cloud Foundations (2026)"],"Soluciones escalables en la nube"]
 ];
+proyectos.unshift(proyectos.splice(2,1)[0]);
 const pj=document.getElementById('proj'),dlg=document.getElementById('dlg'),dbody=document.getElementById('dbody');
-pj.innerHTML=proyectos.map((p,i)=>`<article class="pj" tabindex="0" role="button" data-i="${i}">${p[0]}<div class="bd"><h4>${p[1]}</h4><p>${p[2]}</p><div class="tg">${p[3].map(t=>`<span>${t}</span>`).join('')}</div><span class="more">Ver detalle →</span></div></article>`).join('');
+pj.innerHTML=proyectos.map((p,i)=>`<article class="pj${i===0?' feat':''}" tabindex="0" role="button" data-i="${i}">${p[0]}<div class="bd"><h4>${p[1]}</h4><p>${p[2]}</p><div class="tg">${p[3].map(t=>`<span>${t}</span>`).join('')}</div><span class="more">Ver detalle →</span></div></article>`).join('');
 function openP(i){const p=proyectos[i];dbody.innerHTML=`${p[0]}<div class="bd"><h3>${p[1]}</h3><p style="color:var(--muted)">${p[2]}</p><ul>${p[4].map(x=>`<li>${x}</li>`).join('')}</ul><div class="res">Resultado: ${p[5]}</div><div class="tg" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px">${p[3].map(t=>`<span style="background:var(--chip);color:var(--accent2);font-size:.8rem;padding:3px 12px;border-radius:999px">${t}</span>`).join('')}</div></div>`;dlg.showModal()}
 pj.querySelectorAll('.pj').forEach(c=>{c.onclick=()=>openP(c.dataset.i);c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openP(c.dataset.i)}}});
 dlg.querySelector('.x').onclick=()=>dlg.close();
