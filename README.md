@@ -13,6 +13,14 @@
 
 </div>
 
+<div align="center">
+
+<img src="cv-pagina-1.png" alt="Hoja de vida de Diana Carolina González Díaz, página 1" width="850">
+
+<img src="cv-pagina-2.png" alt="Hoja de vida de Diana Carolina González Díaz, página 2" width="850">
+
+</div>
+
 ---
 
 ## 👩‍💻 Perfil
