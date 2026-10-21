@@ -6,7 +6,7 @@
 
 📍 Tunja, Colombia
 
-[![CV interactiva](https://img.shields.io/badge/%F0%9F%9A%80_Ver_CV_interactiva-4f8cff?style=for-the-badge)](https://diana1295dev.github.io/CVDiana_Carolina_Gonzalez_DiazPRA/)
+[![CV interactiva](https://img.shields.io/badge/%F0%9F%9A%80_Ver_CV_interactiva-4f8cff?style=for-the-badge)](https://diana1295dev.github.io/CVDiana_Carolina_Gonzalez_Diaz/)
 [![Descargar PDF](https://img.shields.io/badge/%E2%AC%87_Descargar_PDF-22d3c5?style=for-the-badge)](Diana_Gonzalez_CV.pdf)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/diana-carolina-gonzalez-653305290)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dianacarolinagondz@gmail.com)
@@ -45,7 +45,7 @@ Más de 3 años integrando **analítica de datos, ciencia de datos e IA**. Dise�
 | 2019 | Data Analyst | Merqueo S.A.S |
 | 2018 – 2019 | Data Analyst | Fundación Universitaria Konrad Lorenz |
 
-👉 **[Ver el detalle completo en la versión interactiva](https://diana1295dev.github.io/CVDiana_Carolina_Gonzalez_DiazPRA/)**
+👉 **[Ver el detalle completo en la versión interactiva](https://diana1295dev.github.io/CVDiana_Carolina_Gonzalez_Diaz/)**
 
 ## 🎓 Formación
 
