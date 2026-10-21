@@ -79,6 +79,19 @@ h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;margi
 .card.hl{border-color:var(--accent)}
 .soft{display:flex;flex-wrap:wrap;gap:8px}
 .soft span{background:var(--chip);padding:6px 14px;border-radius:999px;font-size:.9rem;color:var(--muted)}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.pj{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s}
+.pj:hover{transform:translateY(-4px);border-color:var(--accent)}
+.pj svg{display:block;width:100%;height:auto;background:var(--bg2)}
+.pj .bd{padding:16px 18px 18px}
+.pj h4{font-size:1.05rem;margin-bottom:4px}
+.pj p{color:var(--muted);font-size:.9rem}
+.pj .tg{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pj .tg span{background:var(--chip);color:var(--accent2);font-size:.75rem;padding:3px 10px;border-radius:999px}
+.note{color:var(--muted);font-size:.8rem;margin-top:14px;font-style:italic}
+.sv-a{fill:var(--accent)}.sv-b{fill:var(--accent2)}.sv-c{fill:var(--card)}.sv-l{stroke:var(--line);fill:none}.sv-t{fill:var(--muted);font:11px system-ui}.sv-h{fill:var(--text);font:bold 12px system-ui}
+.sv-bar{transform-origin:bottom;animation:grow 1.2s ease both}
+@keyframes grow{from{transform:scaleY(0)}}
 footer{margin-top:70px;padding:30px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.9rem}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
 .reveal.in{opacity:1;transform:none}
@@ -89,7 +102,7 @@ footer{margin-top:70px;padding:30px 0;border-top:1px solid var(--line);text-alig
 <body>
 <nav><div class="wrap">
   <a href="#inicio">Inicio</a><a href="#perfil">Perfil</a><a href="#skills">Skills</a>
-  <a href="#experiencia">Experiencia</a><a href="#formacion">Formación</a><a href="#contacto">Contacto</a>
+  <a href="#experiencia">Experiencia</a><a href="#proyectos">Proyectos</a><a href="#formacion">Formación</a><a href="#contacto">Contacto</a>
   <span class="sp"></span>
   <button class="icon-btn" id="theme" aria-label="Cambiar tema">🌙</button>
 </div></nav>
@@ -131,6 +144,13 @@ footer{margin-top:70px;padding:30px 0;border-top:1px solid var(--line);text-alig
     <h2>Trayectoria profesional</h2>
     <p class="sub">Haz clic en cada cargo para ver los logros</p>
     <div class="tl" id="tl"></div>
+  </section>
+
+  <section id="proyectos" class="reveal">
+    <h2>Proyectos y aplicaciones</h2>
+    <p class="sub">Lo que he construido, en pocas palabras</p>
+    <div class="proj" id="proj"></div>
+    <p class="note">Las imágenes son ilustraciones esquemáticas de cada solución; no contienen datos reales de las empresas.</p>
   </section>
 
   <section id="formacion" class="reveal">
@@ -224,6 +244,26 @@ document.getElementById('tl').innerHTML=jobs.map((j,i)=>`<article class="job${j.
 document.querySelectorAll('.job header').forEach(h=>h.onclick=()=>h.parentElement.classList.toggle('open'));
 document.getElementById('soft').innerHTML=soft.map(s=>`<span>${s}</span>`).join('');
 document.getElementById('yr').textContent=new Date().getFullYear();
+
+// proyectos (ilustraciones SVG)
+const W='<svg viewBox="0 0 320 180" role="img" aria-label="';
+const chat=W+'Asistente de IA para consulta de pagos"><rect x="14" y="14" width="292" height="152" rx="12" class="sv-c sv-l"/><rect x="14" y="14" width="292" height="26" rx="12" class="sv-a"/><text x="28" y="31" class="sv-h" style="fill:#fff">Asistente de pagos · 13 países</text><rect x="28" y="52" width="150" height="26" rx="10" class="sv-l"/><text x="38" y="69" class="sv-t">¿Estado de mi pago en Perú?</text><rect x="120" y="88" width="172" height="40" rx="10" class="sv-b"/><text x="130" y="105" class="sv-t" style="fill:#06231f">Tu pago fue aprobado y</text><text x="130" y="119" class="sv-t" style="fill:#06231f">se acreditará el viernes ✓</text><circle cx="40" cy="148" r="5" class="sv-b"/><text x="52" y="152" class="sv-t">LLM en producción</text></svg>';
+const pipe=W+'Pipeline de facturas a planilla de pagos"><rect x="14" y="60" width="64" height="60" rx="8" class="sv-c sv-l"/><text x="24" y="86" class="sv-h">PDF</text><text x="22" y="102" class="sv-t">Facturas</text><path d="M80 90h40" class="sv-l" stroke-width="2"/><rect x="122" y="60" width="76" height="60" rx="8" class="sv-a"/><text x="134" y="86" class="sv-h" style="fill:#fff">Python</text><text x="132" y="102" class="sv-t" style="fill:#fff">Leer + validar</text><path d="M200 90h40" class="sv-l" stroke-width="2"/><rect x="242" y="60" width="64" height="60" rx="8" class="sv-b"/><text x="250" y="86" class="sv-h" style="fill:#06231f">Planilla</text><text x="250" y="102" class="sv-t" style="fill:#06231f">Argentina</text><text x="14" y="158" class="sv-t">Datos confiables y precisos para el pago</text></svg>';
+const trace=W+'Aplicación de trazabilidad documental de comisiones"><rect x="14" y="14" width="292" height="152" rx="12" class="sv-c sv-l"/><text x="28" y="38" class="sv-h">Comisiones · Colombia</text><path d="M44 100h232" class="sv-l" stroke-width="3"/><circle cx="44" cy="100" r="9" class="sv-b"/><circle cx="112" cy="100" r="9" class="sv-b"/><circle cx="180" cy="100" r="9" class="sv-a"/><circle cx="276" cy="100" r="9" class="sv-l"/><text x="24" y="130" class="sv-t">Recibido</text><text x="90" y="130" class="sv-t">Validado</text><text x="160" y="130" class="sv-t">En pago</text><text x="252" y="130" class="sv-t">Pagado</text><text x="28" y="64" class="sv-t">Visibilidad en cada etapa del pago</text></svg>';
+const bi=W+'Tablero de KPIs en Power BI"><rect x="14" y="14" width="292" height="152" rx="12" class="sv-c sv-l"/><text x="28" y="34" class="sv-h">KPIs de la compañía</text><rect x="28" y="44" width="80" height="34" rx="6" class="sv-l"/><text x="36" y="66" class="sv-h">87%</text><rect x="116" y="44" width="80" height="34" rx="6" class="sv-l"/><text x="124" y="66" class="sv-h">13</text><rect x="204" y="44" width="80" height="34" rx="6" class="sv-l"/><text x="212" y="66" class="sv-h">+3</text><g><rect class="sv-a sv-bar" x="40" y="110" width="26" height="44"/><rect class="sv-b sv-bar" x="80" y="96" width="26" height="58" style="animation-delay:.1s"/><rect class="sv-a sv-bar" x="120" y="118" width="26" height="36" style="animation-delay:.2s"/><rect class="sv-b sv-bar" x="160" y="90" width="26" height="64" style="animation-delay:.3s"/></g><path d="M214 140l22-24 20 12 30-34" class="sv-l" stroke="var(--accent2)" stroke-width="3"/></svg>';
+const n8n=W+'Flujo n8n de validación de documentos"><circle cx="40" cy="90" r="22" class="sv-a"/><text x="30" y="94" class="sv-t" style="fill:#fff">Inicio</text><path d="M62 90h36" class="sv-l" stroke-width="2"/><rect x="98" y="68" width="56" height="44" rx="8" class="sv-c sv-l"/><text x="106" y="94" class="sv-t">Validar</text><path d="M154 90h30" class="sv-l" stroke-width="2"/><path d="M184 90l20-24h40" class="sv-l" stroke-width="2"/><path d="M184 90l20 24h40" class="sv-l" stroke-width="2"/><rect x="246" y="52" width="60" height="28" rx="8" class="sv-b"/><text x="258" y="70" class="sv-t" style="fill:#06231f">Aprobado</text><rect x="246" y="100" width="60" height="28" rx="8" class="sv-l"/><text x="256" y="118" class="sv-t">Revisión</text><text x="14" y="158" class="sv-t">Validación masiva sin intervención manual</text></svg>';
+const pa=W+'Captura de datos con Power Apps"><rect x="100" y="8" width="120" height="164" rx="16" class="sv-c sv-l" stroke-width="2"/><rect x="112" y="22" width="96" height="20" rx="6" class="sv-a"/><text x="122" y="36" class="sv-t" style="fill:#fff">Formulario</text><rect x="112" y="52" width="96" height="18" rx="5" class="sv-l"/><rect x="112" y="78" width="96" height="18" rx="5" class="sv-l"/><rect x="112" y="104" width="96" height="18" rx="5" class="sv-l"/><rect x="112" y="134" width="96" height="22" rx="8" class="sv-b"/><text x="138" y="149" class="sv-t" style="fill:#06231f">Enviar</text><text x="240" y="92" class="sv-t">Power Automate</text><path d="M222 88h14" class="sv-l" stroke-width="2"/></svg>';
+const cloud=W+'Arquitectura serverless en AWS"><rect x="20" y="64" width="56" height="52" rx="8" class="sv-c sv-l"/><text x="30" y="94" class="sv-t">Vercel</text><path d="M78 90h30" class="sv-l" stroke-width="2"/><rect x="108" y="64" width="66" height="52" rx="8" class="sv-a"/><text x="116" y="94" class="sv-t" style="fill:#fff">Lambda</text><path d="M176 78l30-22M176 102l30 22" class="sv-l" stroke-width="2"/><rect x="206" y="36" width="60" height="36" rx="8" class="sv-b"/><text x="222" y="58" class="sv-t" style="fill:#06231f">S3</text><rect x="206" y="110" width="80" height="36" rx="8" class="sv-b"/><text x="214" y="132" class="sv-t" style="fill:#06231f">DynamoDB</text></svg>';
+const proyectos=[
+ [chat,"Asistente inteligente de pagos","Asistente basado en LLMs, en producción, que automatiza la consulta de pagos en 13 países.",["LLM","Python","IA"]],
+ [pipe,"Planilla de pagos automatizada","Pipelines que leen y validan facturas para generar la planilla de pagos de Argentina.",["Python","ETL","Calidad de datos"]],
+ [trace,"Trazabilidad de comisiones","Aplicación de control documental con visibilidad total del proceso de pago al cliente final.",["Full Stack","Trazabilidad"]],
+ [bi,"Tableros de KPIs","Dashboards dinámicos para monitorear los indicadores clave de desempeño de la compañía.",["Power BI","KPIs","Visualización"]],
+ [n8n,"Validación masiva con n8n","Flujos de automatización que validan documentos masivos sin intervención manual.",["n8n","Automatización"]],
+ [pa,"Captura digital de información","Formularios y flujos que centralizan los datos del negocio y reemplazan procesos manuales.",["Power Apps","Power Automate"]],
+ [cloud,"Despliegues en la nube","Arquitectura serverless y despliegues automatizados para aplicaciones y agentes de IA.",["AWS","Lambda","Vercel"]]
+];
+document.getElementById('proj').innerHTML=proyectos.map(p=>`<article class="pj">${p[0]}<div class="bd"><h4>${p[1]}</h4><p>${p[2]}</p><div class="tg">${p[3].map(t=>`<span>${t}</span>`).join('')}</div></div></article>`).join('');
 
 // tema
 const root=document.documentElement,tb=document.getElementById('theme');
