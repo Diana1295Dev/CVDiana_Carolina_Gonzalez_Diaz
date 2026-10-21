@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diana Carolina González Díaz | AI Engineer & Data Specialist</title>
+<meta name="description" content="Hoja de vida interactiva de Diana Carolina González Díaz: Senior Data & AI Specialist, Full Stack AI Engineer. Python, SQL, n8n, Power BI, AWS.">
+<meta property="og:title" content="Diana Carolina González Díaz | AI Engineer">
+<meta property="og:description" content="Datos, automatización e inteligencia artificial. Hoja de vida interactiva.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#0b1020;--bg2:#121933;--card:#161e3d;--text:#e8ecf8;--muted:#9aa6c7;
+  --accent:#4f8cff;--accent2:#22d3c5;--line:#263055;--chip:#1e2750;
+}
+:root[data-theme="light"]{
+  --bg:#f6f8fc;--bg2:#eaf0fb;--card:#ffffff;--text:#16203f;--muted:#5a6788;
+  --accent:#2f6bff;--accent2:#0fa89c;--line:#d8e0f0;--chip:#e6edfb;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:6px;height:56px;overflow-x:auto}
+nav a{color:var(--muted);padding:6px 12px;border-radius:999px;font-size:.9rem;white-space:nowrap}
+nav a:hover,nav a.on{color:var(--text);background:var(--chip)}
+nav .sp{flex:1}
+button{font:inherit;cursor:pointer;color:inherit}
+.icon-btn{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.hero{padding:80px 0 60px;background:radial-gradient(900px 400px at 80% -10%,color-mix(in srgb,var(--accent) 30%,transparent),transparent),radial-gradient(700px 300px at 0% 10%,color-mix(in srgb,var(--accent2) 20%,transparent),transparent)}
+.hero .tag{color:var(--accent2);font-weight:600;letter-spacing:.08em;font-size:.85rem;text-transform:uppercase}
+.hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.1;margin:10px 0}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:clamp(1.1rem,3vw,1.5rem);color:var(--muted);min-height:2em}
+.role b{color:var(--text)}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent2);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:12px;font-weight:600;border:1px solid var(--line);background:var(--card)}
+.btn.pri{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:0}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+.meta{margin-top:22px;color:var(--muted);font-size:.95rem;display:flex;flex-wrap:wrap;gap:6px 18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:-30px;position:relative}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.stat .n{font-size:2rem;font-weight:800;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{color:var(--muted);font-size:.85rem}
+section{padding:64px 0 10px}
+h2{font-size:1.7rem;margin-bottom:6px}
+h2::after{content:"";display:block;width:48px;height:4px;border-radius:4px;margin-top:8px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.sub{color:var(--muted);margin:10px 0 24px}
+.about p{color:var(--muted);font-size:1.05rem}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tab{background:var(--chip);border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--muted)}
+.tab.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{background:var(--card);border:1px solid var(--line);padding:9px 16px;border-radius:12px;animation:pop .3s both}
+@keyframes pop{from{opacity:0;transform:scale(.9)}}
+.chip:hover{border-color:var(--accent2)}
+.tl{position:relative;margin-left:10px;border-left:2px solid var(--line);padding-left:26px}
+.job{position:relative;margin-bottom:18px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.job::before{content:"";position:absolute;left:-35px;top:24px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.job.cur::before{background:var(--accent2);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent2) 30%,transparent)}
+.job header{display:flex;justify-content:space-between;gap:12px;cursor:pointer;align-items:flex-start}
+.job h3{font-size:1.1rem}
+.job .co{color:var(--accent2);font-weight:600}
+.job .dt{color:var(--muted);font-size:.85rem}
+.job .arrow{transition:transform .2s;color:var(--muted)}
+.job.open .arrow{transform:rotate(180deg)}
+.job ul{list-style:none;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.job.open ul{max-height:600px;margin-top:12px}
+.job li{color:var(--muted);padding:5px 0 5px 18px;position:relative;font-size:.95rem}
+.job li::before{content:"▹";position:absolute;left:0;color:var(--accent2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.card h4{margin-bottom:4px}.card p{color:var(--muted);font-size:.9rem}
+.card.hl{border-color:var(--accent)}
+.soft{display:flex;flex-wrap:wrap;gap:8px}
+.soft span{background:var(--chip);padding:6px 14px;border-radius:999px;font-size:.9rem;color:var(--muted)}
+footer{margin-top:70px;padding:30px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:.9rem}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media print{nav,.cta,.icon-btn{display:none}.reveal{opacity:1;transform:none}.job ul{max-height:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a href="#inicio">Inicio</a><a href="#perfil">Perfil</a><a href="#skills">Skills</a>
+  <a href="#experiencia">Experiencia</a><a href="#formacion">Formación</a><a href="#contacto">Contacto</a>
+  <span class="sp"></span>
+  <button class="icon-btn" id="theme" aria-label="Cambiar tema">🌙</button>
+</div></nav>
+
+<header class="hero" id="inicio"><div class="wrap">
+  <div class="tag">Hoja de vida interactiva</div>
+  <h1>Diana Carolina <span>González Díaz</span></h1>
+  <div class="role">Soy <b id="typed"></b><span class="cursor"></span></div>
+  <div class="cta">
+    <a class="btn pri" href="Diana_Gonzalez_CV.pdf" download>⬇ Descargar PDF</a>
+    <a class="btn" href="https://linkedin.com/in/diana-carolina-gonzalez-653305290" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="mailto:dianacarolinagondz@gmail.com">✉ Escríbeme</a>
+  </div>
+  <div class="meta"><span>📍 Tunja, Colombia</span><span>📞 3227906404</span></div>
+</div></header>
+
+<main class="wrap">
+  <div class="stats reveal">
+    <div class="stat"><div class="n" data-to="3" data-suf="+">0</div><div class="l">años de experiencia</div></div>
+    <div class="stat"><div class="n" data-to="13">0</div><div class="l">países con asistentes IA</div></div>
+    <div class="stat"><div class="n" data-to="87" data-suf="%">0</div><div class="l">mejora en tiempo de respuesta</div></div>
+    <div class="stat"><div class="n" data-to="7">0</div><div class="l">organizaciones</div></div>
+  </div>
+
+  <section id="perfil" class="about reveal">
+    <h2>Perfil profesional</h2>
+    <p class="sub">Analista Senior de Datos &amp; Full Stack AI Engineer</p>
+    <p>Integro analítica de datos, ciencia de datos e inteligencia artificial. Diseño pipelines de datos eficientes y arquitecturas de automatización que transforman información compleja en soluciones prácticas para el negocio. Trabajo con Python, SQL y n8n, e implemento agentes de IA, automatizaciones inteligentes, dashboards interactivos y despliegues en la nube (AWS, Vercel). Combino el análisis estadístico riguroso con Power BI para democratizar la información, y aplico Machine Learning en modelos predictivos que ayudan a optimizar procesos y mejorar la toma de decisiones.</p>
+  </section>
+
+  <section id="skills" class="reveal">
+    <h2>Stack tecnológico</h2>
+    <p class="sub">Haz clic en una categoría</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <section id="experiencia" class="reveal">
+    <h2>Trayectoria profesional</h2>
+    <p class="sub">Haz clic en cada cargo para ver los logros</p>
+    <div class="tl" id="tl"></div>
+  </section>
+
+  <section id="formacion" class="reveal">
+    <h2>Formación y certificaciones</h2>
+    <p class="sub">&nbsp;</p>
+    <div class="grid">
+      <div class="card hl"><h4>Maestría en Inteligencia Artificial</h4><p>Universidad de La Salle · En espera de grado</p></div>
+      <div class="card"><h4>Ingeniería Industrial</h4><p>Fundación Universitaria Konrad Lorenz · 2019</p></div>
+      <div class="card"><h4>Automatización Industrial</h4><p>Festo · 2017</p></div>
+      <div class="card"><h4>Técnico en Contabilización de Operaciones Comerciales y Financieras</h4><p>SENA · 2012</p></div>
+      <div class="card hl"><h4>AWS Academy Graduate – Cloud Foundations</h4><p>2026</p></div>
+      <div class="card"><h4>Vibe Coding Práctico: Apps con IA desde Cero</h4><p>Udemy · 2026</p></div>
+      <div class="card"><h4>Scrum Foundation Professional Certificate (SFPC)</h4><p>Certiprof · 2023</p></div>
+      <div class="card"><h4>Python desde Cero</h4><p>Unipython · 2020</p></div>
+    </div>
+    <h2 style="margin-top:44px">Investigación y estadística</h2>
+    <p class="sub">Fundación Universitaria Konrad Lorenz · Investigadora de apoyo en Gráficos de Control Multivariantes · 2017–2018</p>
+    <p style="color:var(--muted)">Análisis de datos con R, Minitab y SPSS para identificar no conformidades, causas asignables y variabilidad en procesos productivos; apoyo a informes técnicos y artículo científico.</p>
+  </section>
+
+  <section id="contacto" class="reveal">
+    <h2>Competencias blandas</h2>
+    <p class="sub">&nbsp;</p>
+    <div class="soft" id="soft"></div>
+    <h2 style="margin-top:44px">Contacto</h2>
+    <p class="sub">¿Hablamos de datos, IA o automatización?</p>
+    <div class="cta">
+      <a class="btn pri" href="mailto:dianacarolinagondz@gmail.com">✉ dianacarolinagondz@gmail.com</a>
+      <a class="btn" href="https://linkedin.com/in/diana-carolina-gonzalez-653305290" target="_blank" rel="noopener">in/diana-carolina-gonzalez</a>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> Diana Carolina González Díaz · Tunja, Colombia</footer>
+
+<script>
+const roles=["Senior Data & AI Specialist","Full Stack AI Engineer","Automation Specialist","Ingeniera de Datos","Analista de Datos"];
+const skills={
+ "Datos y BI":["Power BI","Power Query","Excel avanzado","KPIs","Dashboards","Visualización"],
+ "Ingeniería de datos":["SQL","Limpieza de datos","Calidad de datos","ETL","Automatización de flujos","Trazabilidad","AWS Lambda","S3","DynamoDB","Vercel","Arquitectura serverless","Despliegues automatizados","Infraestructura como código"],
+ "Ciencia de datos / ML":["Python","EDA","Estadística","Probabilidad","ML supervisado","ML no supervisado (en formación)"],
+ "Procesos data-driven":["Orquestar agentes de IA","Modelos predictivos","Pipelines ETL","Mejora continua","Lean","Documentación","Auditoría","Optimización basada en evidencia"],
+ "Full Stack":["Power Apps","n8n","HTML","Dashboards interactivos","Vercel deployments"]
+};
+const jobs=[
+ {r:"Senior Data & AI Specialist",c:"Prolife Biotech S.A.S.",d:"Jul 2024 – Sep 2026 · Tunja",cur:1,b:[
+  "Diseñé y desplegué asistentes inteligentes basados en LLMs en producción, automatizando la consulta de pagos en 13 países.",
+  "Automaticé la planilla de pagos de Argentina con pipelines en Python que leen y validan facturas.",
+  "Desarrollé una aplicación de control y trazabilidad documental del proceso de comisiones en Colombia.",
+  "Construí tableros dinámicos en Power BI para el monitoreo de KPIs de la compañía.",
+  "Implementé flujos con n8n para validar documentos masivos sin intervención manual.",
+  "Mejoré el tiempo de respuesta organizacional en un 87% mediante automatización con Python."]},
+ {r:"Data Analyst & Automation Specialist",c:"Credibanco S.A.",d:"Abr 2022 – Sep 2023 · Bogotá",b:[
+  "Analicé información operativa para detectar cuellos de botella y proponer mejoras basadas en datos.",
+  "Digitalicé la captura de información con Power Apps y Power Automate, centralizando los datos del negocio.",
+  "Monitoreé indicadores de gestión para asegurar la eficiencia de los procesos."]},
+ {r:"Data Analyst",c:"Micropharm S.A.S",d:"Abr 2021 – Jun 2021 · Bogotá",b:[
+  "Analicé no conformidades, hallazgos de auditoría y documentación del sistema de gestión para identificar tendencias y riesgos.",
+  "Fortalecí trazabilidad, control documental y consistencia de datos de calidad.",
+  "Di seguimiento a planes de acción, cumplimiento normativo e indicadores de calidad.",
+  "Desarrollé una herramienta de visualización de indicadores para el Sistema de Gestión 2020."]},
+ {r:"Data Analyst",c:"Brilladora El Diamante",d:"Feb 2020 – May 2020 · Bogotá",b:[
+  "Ejecuté estudios de capacidad instalada con captura de tiempos y movimientos, usando estadística descriptiva e inferencial para dimensionar el personal óptimo en servicios de limpieza y desinfección."]},
+ {r:"Data Analyst",c:"Merqueo S.A.S",d:"Abr 2019 – Jun 2019 · Bogotá",b:[
+  "Analicé la eficiencia del alistamiento de pedidos con métricas como Nivel de Servicio y Picking Rate, para estandarizar flujos y reducir tiempos de ciclo.",
+  "Propuse mejoras basadas en datos operativos, calidad del servicio y objetivos estratégicos."]},
+ {r:"Data Analyst",c:"Fundación Universitaria Konrad Lorenz",d:"Jul 2018 – Ene 2019 · Bogotá",b:[
+  "Procesé y analicé registros de FQRPS: limpieza, correlaciones y tendencias para descubrir patrones de insatisfacción estudiantil.",
+  "Realicé seguimiento a indicadores de procesos estratégicos, de calidad, misionales y de soporte."]}
+];
+const soft=["Pensamiento analítico","Comunicación clara","Trabajo en equipo","Proactividad","Aprendizaje continuo","Atención al detalle","Resolución de problemas","Adaptabilidad","Orientación a resultados","Capacidad de innovación"];
+
+// escritura animada
+const t=document.getElementById('typed');let ri=0,ci=0,del=false;
+(function type(){const w=roles[ri];t.textContent=w.slice(0,ci);
+ if(!del&&ci===w.length){del=true;return setTimeout(type,1600)}
+ if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+ ci+=del?-1:1;setTimeout(type,del?30:70)})();
+
+// skills
+const tabs=document.getElementById('tabs'),chips=document.getElementById('chips');
+function show(k){[...tabs.children].forEach(b=>b.classList.toggle('on',b.textContent===k));
+ chips.innerHTML=skills[k].map((s,i)=>`<span class="chip" style="animation-delay:${i*30}ms">${s}</span>`).join('')}
+Object.keys(skills).forEach(k=>{const b=document.createElement('button');b.className='tab';b.textContent=k;b.onclick=()=>show(k);tabs.appendChild(b)});
+show(Object.keys(skills)[0]);
+
+// experiencia
+document.getElementById('tl').innerHTML=jobs.map((j,i)=>`<article class="job${j.cur?' cur':''}${i===0?' open':''}">
+ <header><div><h3>${j.r}</h3><div class="co">${j.c}</div><div class="dt">${j.d}</div></div><span class="arrow">▼</span></header>
+ <ul>${j.b.map(x=>`<li>${x}</li>`).join('')}</ul></article>`).join('');
+document.querySelectorAll('.job header').forEach(h=>h.onclick=()=>h.parentElement.classList.toggle('open'));
+document.getElementById('soft').innerHTML=soft.map(s=>`<span>${s}</span>`).join('');
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// tema
+const root=document.documentElement,tb=document.getElementById('theme');
+function setTheme(m){root.dataset.theme=m;tb.textContent=m==='dark'?'🌙':'☀️';try{localStorage.setItem('theme',m)}catch(e){}}
+let saved;try{saved=localStorage.getItem('theme')}catch(e){}
+setTheme(saved||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+tb.onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
+
+// contadores + reveal
+function count(el){const to=+el.dataset.to,suf=el.dataset.suf||'';let n=0;const step=()=>{n+=Math.max(1,to/40);if(n>=to){el.textContent=to+suf}else{el.textContent=Math.floor(n)+suf;requestAnimationFrame(step)}};step()}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-to]').forEach(count);io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// nav activa
+const links=[...document.querySelectorAll('nav a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.hash==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+document.querySelectorAll('header[id],section[id]').forEach(s=>so.observe(s));
+</script>
+</body>
+</html>
